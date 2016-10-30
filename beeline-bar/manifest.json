@@ -1,0 +1,31 @@
+{
+   "background": {
+      "scripts": [ "static/js/ext/jquery.js", "static/js/icecreambar.js" ]
+   },
+   "browser_action": {
+       "default_popup": "static/popup.html"
+   },
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "content_scripts": [ {
+      "css": [ "static/css/main.css" ],
+      "html": [ "static/popup.html" ],
+      "js": [ "static/js/jquery.js", "static/js/main.js"],
+      "run_at": "document_idle",
+      "matches": ["<all_urls>"]
+   } ],
+   "description": "A shortcut bar for Google Chrome which is configurable, \
+extensible and shareable. Useful for teams who share lots of bookmarks and \
+perform common actions, like busting a cache or performing a search.",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "manifest_version": 2,
+   "name": "Beeline Bar",
+   "permissions": [ "tabs", "clipboardWrite", "clipboardRead", "storage" ],
+   "short_name": "beelinebar",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0",
+   "web_accessible_resources": [ "static/main.html", "static/config/*" ]
+}
